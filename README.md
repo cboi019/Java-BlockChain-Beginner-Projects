@@ -16,9 +16,9 @@ Project Structure:
 
 Java Blockchain Simulation
 
- access.java       // Represents a single block
- CboiCodes.java  // Handles blockchain creation & validation
- README.md        // Project documentation
+ access.java       // Represents a single block.
+ CboiCodes.java  // Handles blockchain creation & validation.
+ README.md        // Project documentation.
 
 Requirements:
 
