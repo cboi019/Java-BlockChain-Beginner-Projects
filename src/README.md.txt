@@ -84,20 +84,25 @@ Tamper Check for Block 2...
 Is Chain Valid? false
 ==================================================================
 PICTORIAL VIEW (Important Highlights):
-1. Screenshots/Block/Screenshot 2025-08-21 143430.png: (in the access file) Shows the isChainValid method that detects tampering.
+1. https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/Block/Screenshot%202025-08-21%20143430.png: (in the access file) Shows the isChainValid method that detects tampering.
 
-2. Screenshots/BlockChain/Screenshot 2025-08-21 143511.png: (in the main file: CboiCodes) Show List of registered Voters, 2 in this case, please Don't mind the duplicating mistake, get.previoushashvalue can make each block have it's unique hash.
+2. https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/BlockChain/Screenshot%202025-08-21%20143511.png: (in the main file: CboiCodes) Show List of registered Voters, 2 in this case, please Don't mind the duplicating mistake, get.previoushashvalue can make each block have it's unique hash.
 
-3. Screenshots/BlockChain/Screenshot 2025-08-21 143634.png: Show a Tamper Check code to simulate real life tampering, here, the block data is intact and when we run it;
-Screenshots/BlockChain/Screenshot 2025-08-21 143717.png: After we run it, this is the output, Block 1 and 2 with their data and unique hash. Screenshots/BlockChain/Screenshot 2025-08-21 143740.png: Since we didn't change or remove any data, Chain is Valid.
+3. https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/BlockChain/Screenshot%202025-08-21%20143634.png: Shows a Tamper Check code to simulate real life tampering, here, the block data is intact and when we run it;
 
-4. Screenshots/BlockChain/Screenshot 2025-08-21 143950.png: Now let's tamper with it by removing Block 1 Data;
-Screenshots/BlockChain/Screenshot 2025-08-21 144142.png: After we run it, as you can see.. the System detects the change and points which Block has been altered, in this case, Block 0 - the first Block.
+--- https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/BlockChain/Screenshot%202025-08-21%20143717.png: After we run it, this is the output, Block 1 and 2 with their data and unique hash. 
+
+--- https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/BlockChain/Screenshot%202025-08-21%20143740.png: Since we didn't change or remove any data, Chain is Valid.
+
+4. https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/BlockChain/Screenshot%202025-08-21%20143950.png: Now let's tamper with it by removing Block 0 Citizen Data - the first Block;
+
+https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/BlockChain/Screenshot%202025-08-21%20144142.png: After we run it, as you can see.. the System detects the change and points which Block has been altered, in this case, Block 0 - the first Block.
 
 ==================================================================
 Author
 
 Charles Okoronkwo
 Aspiring Blockchain Developer | Forex Trader
+
 
 Oguta LGA, Imo State, Nigeria
