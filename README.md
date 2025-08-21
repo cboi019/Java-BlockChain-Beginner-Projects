@@ -13,6 +13,7 @@ How tampering breaks the chain
 How a frozen copy can detect changes even if the main data is altered in memory
 
 ==================================================================
+
 Project Structure:
 
 Java Blockchain Simulation
@@ -22,6 +23,7 @@ Java Blockchain Simulation
  README.md        // Project documentation
  
 ==================================================================
+
 Requirements:
 
 Java 8 or higher
@@ -29,6 +31,7 @@ Java 8 or higher
 Any Java IDE (IntelliJ IDEA, Eclipse, VS Code)
 
 ==================================================================
+
 Features:
 
 Constructor-based block creation
@@ -42,6 +45,7 @@ Getters and setters for secure access
 Chain validation using isChainValid() 
 
 ==================================================================
+
 How It Works:
 1. Each access contains:
 
@@ -88,6 +92,7 @@ Tamper Check for Block 2...
 Is Chain Valid? false
 
 ==================================================================
+
 PICTORIAL VIEW (Important Highlights):
 1. [src/Screenshots/Block/Screenshot 2025-08-21 143430.png](https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/Block/Screenshot%202025-08-21%20143430.png): (in the access file) Shows the isChainValid method that detects tampering.
 
@@ -104,6 +109,7 @@ PICTORIAL VIEW (Important Highlights):
 https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/BlockChain/Screenshot%202025-08-21%20144142.png: After we run it, as you can see.. the System detects the change and points which Block has been altered, in this case, Block 0 - the first Block.
 
 ==================================================================
+
 Author:
 Charles Okoronkwo
 Aspiring Blockchain Developer | Forex Trader
