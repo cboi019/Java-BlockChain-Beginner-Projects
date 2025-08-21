@@ -1,28 +1,32 @@
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class access {
 
     private String TimeRecorded = String.valueOf(System.currentTimeMillis());
-    private String[] Data;
-    private String[] DataCopy;
+    private String[][] Data;
+    private String[][] DataCopy;
     private String HashValue;
     private String PreviousHashValue;
 
-    public access(String TimeRecorded, String[] Data, String PreviousHashValue) throws Exception{
+    public access(String TimeRecorded, String[][] Data, String PreviousHashValue) throws Exception{
         this.TimeRecorded = TimeRecorded;
         this.Data = Data;
-        this.DataCopy = Arrays.copyOf(Data, Data.length);
+        this.DataCopy = new String[Data.length][];
+        for (int i = 0; i < Data.length; i++) {
+            this.DataCopy = Arrays.copyOf(Data, Data.length);
+        }
         this.PreviousHashValue = PreviousHashValue;
         this.HashValue = computeHash();
     }
     public String computeHash() throws Exception{
-        String datatohash = TimeRecorded + Arrays.toString(Data) + PreviousHashValue;
+        String datatohash = TimeRecorded + Arrays.deepToString(Data) + PreviousHashValue;
         return computeSHA256(datatohash);
     }
     public String DataCopy() throws Exception{
-        String datatohash = TimeRecorded + Arrays.toString(Data) + PreviousHashValue;
+        String datatohash = TimeRecorded + Arrays.deepToString(Data) + PreviousHashValue;
         return computeSHA256(datatohash);
     }
     public static String computeSHA256(String input)throws Exception{
@@ -51,22 +55,17 @@ public class access {
         TimeRecorded = timeRecorded;
     }
 
-    public String[] getData() {
+    public String[][] getData() {
         return Data;
     }
 
-    public void setData(String[] data) {
+    public void setData(String[][] data) {
         Data = data;
     }
 
-    public String[] getDataCopy() {
+    public String[][] getDataCopy() {
         return DataCopy;
     }
-
-    public void setDataCopy(String[] dataCopy) {
-        DataCopy = dataCopy;
-    }
-
     public String getHashValue() {
         return HashValue;
     }
@@ -78,13 +77,42 @@ public class access {
     public void setPreviousHashValue(String previousHashValue) {
         PreviousHashValue = previousHashValue;
     }
+    // CHECK VALIDITY
+    public static boolean isChainValid(ArrayList<access> chain) throws Exception{
+        for (int i = 0; i < chain.size(); i++) {
+            access current = chain.get(i);
+            if (!current.getHashValue().equals(current.recalculateHash())) {
+                System.out.println("Block " + i + " has been altered!!, Hash Mismatch!!!");
+                return false;
+            }
+            if (!current.computeHash().equals(current.DataCopy())) {
+                System.out.println("Original and Copy aren't the same!!!");
+                return false;
+            }
+            if (i > 0) {
+                access previous = chain.get(i - 1);
+                if (!current.getPreviousHashValue().equals(previous.getHashValue())) {
+                    System.out.println("Blocks " + i + " and " + (i - 1) + " aren't in sync!!!");
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    public static String combineallHash(ArrayList<access> allHashes) throws Exception{
+        StringBuilder hash = new StringBuilder();
+        for (access b: allHashes) {
+            hash.append(b.getHashValue());
+        }
+        return access.computeSHA256(hash.toString());
+    }
 
     @Override
     public String toString() {
         return
                 "Time Recorded: " + TimeRecorded +
-                "\nData: " + Arrays.toString(Data) +
-                "\nHash Value: " + HashValue  +
-                "\nPrevious Hash Value: " + PreviousHashValue;
+                        "\nData: " + Arrays.deepToString(Data) +
+                        "\nHash Value: " + HashValue.substring(0, 16)  + "...." +
+                        "\nPrevious Hash Value: " + PreviousHashValue;
     }
 }
