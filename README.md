@@ -1,1 +1,1 @@
-All details about this project, including the explanation of its functionality and proof of work (screenshots/demonstrations), are provided directly in this README file.
+All details about this project, including the explanation of its functionality and proof of work (screenshots/demonstrations), are provided directly in the README inside src file.
