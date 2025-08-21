@@ -84,7 +84,7 @@ Tamper Check for Block 2...
 Is Chain Valid? false
 ==================================================================
 PICTORIAL VIEW (Important Highlights):
-1. https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/Block/Screenshot%202025-08-21%20143430.png: (in the access file) Shows the isChainValid method that detects tampering.
+1. src/Screenshots/Block/Screenshot 2025-08-21 143430.png: (in the access file) Shows the isChainValid method that detects tampering.
 
 2. https://github.com/cboi019/Java-BlockChain-Beginner-Projects/blob/main/src/Screenshots/BlockChain/Screenshot%202025-08-21%20143511.png: (in the main file: CboiCodes) Show List of registered Voters, 2 in this case, please Don't mind the duplicating mistake, get.previoushashvalue can make each block have it's unique hash.
 
